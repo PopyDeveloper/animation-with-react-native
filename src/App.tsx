@@ -3,7 +3,6 @@ import React from 'react'
 import {SafeAreaView, Text, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import { Interpolate } from './Components/Interpolate';
 import Animated, { FadeInLeft } from 'react-native-reanimated';
 
 function App(): JSX.Element {
