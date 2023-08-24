@@ -1,1 +1,2 @@
-# animation-with-react-native
+# Playerground for animations
+

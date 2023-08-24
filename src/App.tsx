@@ -1,7 +1,10 @@
-import React from 'react';
-import {SafeAreaView, useColorScheme} from 'react-native';
+
+import React from 'react'
+import {SafeAreaView, Text, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Interpolate } from './Components/Interpolate';
+import Animated, { FadeInLeft } from 'react-native-reanimated';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -16,10 +19,9 @@ function App(): JSX.Element {
         backgroundStyle,
         {flex: 1, justifyContent: 'center', alignItems: 'center'},
       ]}>
-      {/* <Interpolate /> */}
-      {/* <Lopping /> */}
-      {/* <Spring /> */}
-      {/* <EventAnim /> */}
+        <Animated.Text entering={FadeInLeft.duration(500)} style={{fontSize: 50, fontWeight: 'bold'}}>
+          Popy
+        </Animated.Text>
     </SafeAreaView>
   );
 }
