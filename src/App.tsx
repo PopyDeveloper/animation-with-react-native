@@ -1,26 +1,59 @@
 
-import React from 'react'
-import {SafeAreaView, Text, useColorScheme} from 'react-native';
+import React, { useState } from 'react'
+import {Pressable, SafeAreaView, Text, TouchableOpacity, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Animated, { FadeInLeft } from 'react-native-reanimated';
+import { BookLoading } from './Components/LoadingWLotties/BookLoading';
+import { Loren } from './Components/LoremIpson/Lorem';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const [loading, setLoading] = useState<boolean>(false)
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const showLoading = () => {
+    setLoading(true)
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 5000)
+  }
 
   return (
     <SafeAreaView
       style={[
-        backgroundStyle,
+        // backgroundStyle,
         {flex: 1, justifyContent: 'center', alignItems: 'center'},
       ]}>
-        <Animated.Text entering={FadeInLeft.duration(500)} style={{fontSize: 50, fontWeight: 'bold'}}>
+
+        {
+          loading &&
+          <BookLoading />
+        }
+
+
+        <TouchableOpacity
+          style={{
+            height: 100,
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 100,
+            backgroundColor: 'cyan'
+          }}
+
+          onPress={showLoading}
+        >
+          <Text>
+          Show Loading
+
+          </Text>
+        </TouchableOpacity>
+        {/* <Animated.Text entering={FadeInLeft.duration(500)} style={{fontSize: 50, fontWeight: 'bold'}}>
           Popy
-        </Animated.Text>
+        </Animated.Text> */}
+        <Loren />
+
+       
     </SafeAreaView>
   );
 }
