@@ -45,7 +45,7 @@ function App(): JSX.Element {
         >
           <Text>
           Show Loading
-
+          Testando CI 2
           </Text>
         </TouchableOpacity>
         {/* <Animated.Text entering={FadeInLeft.duration(500)} style={{fontSize: 50, fontWeight: 'bold'}}>
