@@ -13,7 +13,7 @@ export const Loren = () => {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque tincidunt libero a tincidunt. In ut mi a est tincidunt tristique. Suspendisse tincidunt non libero nec auctor. Curabitur iaculis ac nisl ac iaculis. Sed quis ultrices lorem. Integer nec tincidunt libero. Nullam semper tortor nec laoreet venenatis. Quisque id est vel ex tincidunt euismod. Donec tincidunt facilisis dictum. Vivamus fermentum, justo in sollicitudin tincidunt, ligula risus sodales risus, nec facilisis turpis elit et justo. Pellentesque eleifend libero eget diam eleifend, ac euismod quam hendrerit. Duis dictum convallis tristique. Nullam semper viverra libero, nec rhoncus nunc posuere nec.
     
     ... (e assim por diante, repetindo o padrão Lorem Ipsum)
-    
+    dasndlasdn
     `}</Text>
   </View>)
 }
