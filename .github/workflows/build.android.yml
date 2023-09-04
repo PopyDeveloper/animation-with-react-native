@@ -21,7 +21,7 @@ jobs:
         cache: gradle
 
     - name: validate gradlew wrapper
-      uses: gradlew/wrapper-validation-action@v1
+      uses: gradle/wrapper-validation-action@v1
 
     
     - uses: actions/setup-node@v3
