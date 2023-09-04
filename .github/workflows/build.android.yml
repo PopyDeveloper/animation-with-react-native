@@ -10,15 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: checkout 
+      uses: actions/checkout@v3
+
     - name: set up JDK 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin'
+        distribution: 'adopt'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod ./android gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: validate gradlew wrapper
+      uses: gradlew/wrapper-validation-action@v1
+
+    = name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: yarn install
+      run: |
+        cd ./packages/${{ secrets.name_app }}
+        npm i -g corepack
+        yarn install
+
+    - name: Build application
+      run: |
+        cd ./packages/${{ secrets.name_app }}
+        ./gradlew assembleDebug
+
